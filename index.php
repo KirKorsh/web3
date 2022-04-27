@@ -52,7 +52,7 @@ $user = 'u47577';
 $pass = '9303559';
 $db = new PDO('mysql:host=localhost;dbname=u47577', $user, $pass, array(PDO::ATTR_PERSISTENT => true));
 try {
-  $stmt = $db->prepare("INSERT INTO application SET name=:name, email=:email, year=:byear, pol=:pol, konech=:limbs, biogr=:bio");
+  $stmt = $db->prepare("INSERT INTO form SET name=:name, email=:email, year=:byear, pol=:pol, limbs=:limbs, bio=:bio");
   $stmt->bindParam(':name', $name);
   $stmt->bindParam(':email', $email);
   $stmt->bindParam(':byear', $birth_year);
@@ -67,7 +67,7 @@ try {
   
   
   $id = $db->lastInsertId();
-  $sppe= $db->prepare("INSERT INTO superp SET name=:name, per_id=:person");
+  $sppe= $db->prepare("INSERT INTO super SET name=:name, per_id=:person");
   $sppe->bindParam(':person', $id);
   foreach($superpowers as $inserting){
 	$sppe->bindParam(':name', $inserting);
