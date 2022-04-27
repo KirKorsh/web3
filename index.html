@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+		<meta charset = "UTF-8" >
+		<title> КоршиковК </title>
+	</head>
+	<body>
+		<div >	
+			 <form action="index.php" method="POST">
+				<div >
+					 <h1 id="point3">Анкета </h1>
+				</div>
+				<form action="index.php" method="POST">
+				<fieldset >
+					
+					<p><label for="name"><strong>ФИО</strong></label>
+					<input type="text" name="name" placeholder="Иванов Иван Иванович" required autofocus></p>
+					
+					
+					<p><label for="email"><strong>Email</ strong></label>
+					<input type="email" name="email" placeholder="exemple@mail.com" required ></p>
+					
+					<p>
+						<label>
+							Год рождения:<br />
+							<select id="ddlYears" name="year"></select>
+						</label><br />
+					</p>
+				
+				<br > <label > Пол: <label > <br />
+				 <input type = "radio" name = "radio-1" value = "male"/> Мужской 
+				 <input type = "radio" name = "radio-1" value = "female"/> Женский  <br />
+				 
+				<br > <strong> Количество конечностей: </strong> <br />
+				<label> <input type = "radio" name = "radio-2" value = "1"/> 1 </label>
+				<label> <input type = "radio" name = "radio-2" value = "2"/> 2 </label>
+				<label> <input type = "radio" name = "radio-2" value = "3"/> 3 </label>
+				<label> <input type = "radio" name = "radio-2" value = "4"/> 4 </label>
+				<label> <input type = "radio" name = "radio-2" value = "5"/> 5 </label><br />
+				
+				<br> <strong> Сверхспособности: </strong> <br />
+				<label> 
+					<select name="field-name-2[]" multiple="multiple">
+						<option value="fly" > Полёт </option>
+						<option value="sleep" selected="selected"> Спать </option>
+						<option value="run" selected="selected"> Бег по утрам </option>
+					</select>
+				</label> 
+				
+				<label> <br />
+					<strong> Дополнительное описание: </strong> <br />
+					<textarea name="field-name-3"> </textarea>
+				</label> <br />
+				<label> <br /> <input type="checkbox" name="check-1" /> Разрешение на использование личной информации дал(а) </label> <br />
+				
+				<br /><input type="submit" value="Отправить" />
+				<br /> <br />
+			</form>
+			<script type="text/javascript">
+				window.onload = function () {
+				var ddlYears = document.getElementById("ddlYears");
+				var currentYear = (new Date()).getFullYear();
+				for (var i = 1950; i <= currentYear; i++) {
+					var option = document.createElement("OPTION");
+					option.innerHTML = i;
+					option.value = i;
+					ddlYears.appendChild(option);
+				}
+        };
+    </script>
+	</body>
